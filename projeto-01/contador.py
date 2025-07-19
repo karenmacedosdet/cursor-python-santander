@@ -1,8 +1,10 @@
+"""Contador de palavras: lê um arquivo de texto e exibe as 10 palavras mais comuns."""
+
 from collections import Counter
 import re
 
 
-def contar_palavras(caminho_arquivo):
+def contar_palavras(caminho_arquivo: str) -> None:
     """
     Conta o total de palavras em um arquivo de texto e exibe as 10 palavras mais comuns.
 
@@ -30,14 +32,17 @@ def contar_palavras(caminho_arquivo):
 
     except FileNotFoundError:
         # Captura o erro se o arquivo não for encontrado
-        print(f"Erro: Arquivo '{caminho_arquivo}' não encontrado. Por favor, verifique o caminho.")
-    except Exception as e:
-        # Captura qualquer outro erro inesperado durante a leitura ou processamento
-        print(f"Ocorreu um erro inesperado ao processar o arquivo: {e}")
+        print(
+            f"Erro: Arquivo '{caminho_arquivo}' não encontrado. Por favor, verifique o caminho."
+        )
+    except (IOError, UnicodeDecodeError) as e:
+        print(f"Ocorreu um erro ao processar o arquivo: {e}")
 
 
 if __name__ == "__main__":
     print("--- Contador de Palavras em Arquivo de Texto ---")
-    caminho_do_arquivo_input = input("Digite o caminho completo para o arquivo de texto: ")
+    caminho_do_arquivo_input = input(
+        "Digite o caminho completo para o arquivo de texto: "
+    )
     contar_palavras(caminho_do_arquivo_input)
     print("\n--- Processamento concluído ---")

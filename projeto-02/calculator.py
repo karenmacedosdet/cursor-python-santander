@@ -1,38 +1,41 @@
 """Calculadora simples interativa."""
 
 
-def calcular(operacao, num1, num2):
+def calcular(operacao: str, num1: float, num2: float | str) -> float | str:
     """Calcula o resultado da operação entre dois números."""
     try:
-        if operacao == 'adição':
-            return num1 + num2
-        elif operacao == 'subtração':
-            return num1 - num2
-        elif operacao == 'multiplicação':
-            return num1 * num2
-        elif operacao == 'divisão':
+        num2_float = float(num2)
+        if operacao == "adição":
+            return num1 + num2_float
+        elif operacao == "subtração":
+            return num1 - num2_float
+        elif operacao == "multiplicação":
+            return num1 * num2_float
+        elif operacao == "divisão":
             try:
-                return num1 / num2
+                return num1 / num2_float
             except ZeroDivisionError:
-                return 'Erro: divisão por zero.'
+                return "Erro: divisão por zero."
         else:
-            return 'Operação inválida.'
+            return "Operação inválida."
     except Exception as e:
         return f"Erro: {e}"
 
 
 if __name__ == "__main__":
     while True:
-        operacao = input(
-            "Digite a operação (adição, subtração, multiplicação, divisão) "
-            "ou 'saída' para encerrar: "
-        ).strip().lower()
-        if operacao == 'saída':
+        operacao = (
+            input(
+                "Digite a operação (adição, subtração, multiplicação, divisão) "
+                "ou 'saída' para encerrar: "
+            )
+            .strip()
+            .lower()
+        )
+        if operacao == "saída":
             print("Programa encerrado.")
             break
-        if operacao not in [
-            'adição', 'subtração', 'multiplicação', 'divisão'
-        ]:
+        if operacao not in ["adição", "subtração", "multiplicação", "divisão"]:
             print("Operação inválida. Tente novamente.")
             continue
         try:
@@ -45,11 +48,9 @@ if __name__ == "__main__":
         print(f"Resultado: {resultado}")
 
     # Testes
-    print(calcular('adição', 1, 2))
-    print(calcular('subtração', 1, 2))
-    print(calcular('multiplicação', 1, 2))
-    print(calcular('divisão', 1, 2))
-    print(calcular('divisão', 1, 0))
-    print(calcular('divisão', 1, 'a'))
-
-    
+    print(calcular("adição", 1, 2))
+    print(calcular("subtração", 1, 2))
+    print(calcular("multiplicação", 1, 2))
+    print(calcular("divisão", 1, 2))
+    print(calcular("divisão", 1, 0))
+    print(calcular("divisão", 1, "a"))

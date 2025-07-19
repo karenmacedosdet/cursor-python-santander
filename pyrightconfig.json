@@ -1,0 +1,34 @@
+{
+    "include": [
+        "src",
+        "tests",
+        "scripts"
+    ],
+    "exclude": [
+        "venv",
+        "env",
+        "**/node_modules",
+        "**/__pycache__",
+        "**/tmp",
+        ".git",
+        ".mypy_cache",
+        ".pytest_cache"
+    ],
+    "pythonVersion": "3.10",
+    "pythonPlatform": "Windows",
+    "typeCheckingMode": "strict",
+    "reportUnusedImport": "warning",
+    "reportMissingTypeStubs": "warning",
+    "reportUnusedVariable": "none",
+    "extraPaths": [
+        "src",
+        "tests",
+        "scripts",
+        "utils"
+    ],
+    // Pylance/pyright-specific settings
+    "venvPath": "./",
+    "venv": "venv",
+    "useLibraryCodeForTypes": true,
+    "stubPath": "./typings"
+}
