@@ -33,7 +33,8 @@ def contar_palavras(caminho_arquivo: str) -> None:
     except FileNotFoundError:
         # Captura o erro se o arquivo não for encontrado
         print(
-            f"Erro: Arquivo '{caminho_arquivo}' não encontrado. Por favor, verifique o caminho."
+            f"Erro: Arquivo '{caminho_arquivo}' não encontrado. "
+            "Por favor, verifique o caminho."
         )
     except (IOError, UnicodeDecodeError) as e:
         print(f"Ocorreu um erro ao processar o arquivo: {e}")

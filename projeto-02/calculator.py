@@ -18,33 +18,40 @@ def calcular(operacao: str, num1: float, num2: float | str) -> float | str:
                 return "Erro: divisão por zero."
         else:
             return "Operação inválida."
-    except Exception as e:
+    except (TypeError, ValueError) as e:
         return f"Erro: {e}"
 
 
 if __name__ == "__main__":
     while True:
-        operacao = (
+        operacao_input = (
             input(
-                "Digite a operação (adição, subtração, multiplicação, divisão) "
-                "ou 'saída' para encerrar: "
+                "Digite a operação (adição, subtração, multiplicação, "
+                "divisão) ou 'saída' para encerrar: "
             )
             .strip()
             .lower()
         )
-        if operacao == "saída":
+        if operacao_input == "saída":
             print("Programa encerrado.")
             break
-        if operacao not in ["adição", "subtração", "multiplicação", "divisão"]:
+        if operacao_input not in [
+            "adição",
+            "subtração",
+            "multiplicação",
+            "divisão",
+        ]:
             print("Operação inválida. Tente novamente.")
             continue
         try:
-            num1 = float(input("Digite o primeiro número: "))
-            num2 = float(input("Digite o segundo número: "))
+            valor1 = float(input("Digite o primeiro número: "))
+            valor2 = float(input("Digite o segundo número: "))
         except ValueError:
-            print("Entrada inválida. Certifique-se de digitar números válidos.")
+            print(
+                "Entrada inválida. Certifique-se de digitar números válidos."
+            )
             continue
-        resultado = calcular(operacao, num1, num2)
+        resultado = calcular(operacao_input, valor1, valor2)
         print(f"Resultado: {resultado}")
 
     # Testes
