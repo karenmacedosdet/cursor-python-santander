@@ -1,4 +1,7 @@
-"""Contador de palavras: lê um arquivo de texto e exibe as 10 palavras mais comuns."""
+"""
+Contador de palavras: lê um arquivo de texto e
+exibe as 10 palavras mais comuns.
+"""
 
 from collections import Counter
 import re
@@ -6,7 +9,8 @@ import re
 
 def contar_palavras(caminho_arquivo: str) -> None:
     """
-    Conta o total de palavras em um arquivo de texto e exibe as 10 palavras mais comuns.
+    Conta o total de palavras em um arquivo de texto e
+    exibe as 10 palavras mais comuns.
 
     Args:
         caminho_arquivo (str): O caminho completo para o arquivo de texto.
@@ -15,12 +19,15 @@ def contar_palavras(caminho_arquivo: str) -> None:
         # Abre o arquivo para leitura com codificação UTF-8
         with open(caminho_arquivo, "r", encoding="utf-8") as f:
             texto = f.read()
-        # Encontra todas as "palavras" (sequências alfanuméricas) e converte para minúsculas
+        # Encontra todas as "palavras" (sequências alfanuméricas)
+        # e converte para minúsculas
         palavras = re.findall(r"\w+", texto.lower())
 
         # Verifica se alguma palavra foi encontrada antes de processar
         if not palavras:
-            print(f"Nenhuma palavra encontrada no arquivo: {caminho_arquivo}")
+            print(
+                f"Nenhuma palavra encontrada no arquivo: {caminho_arquivo}"
+            )
             return
 
         total_palavras = len(palavras)
