@@ -1,34 +1,35 @@
 {
     "include": [
+        ".",
         "src",
         "tests",
-        "scripts"
+        "scripts",
+        "projeto-01",
+        "projeto-02",
+        "projeto-03",
+        "projeto-04"
     ],
     "exclude": [
         "venv",
         "env",
         "**/node_modules",
         "**/__pycache__",
-        "**/tmp",
-        ".git",
-        ".mypy_cache",
-        ".pytest_cache"
+        ".git"
     ],
-    "pythonVersion": "3.10",
-    "pythonPlatform": "Windows",
-    "typeCheckingMode": "strict",
-    "reportUnusedImport": "warning",
-    "reportMissingTypeStubs": "warning",
-    "reportUnusedVariable": "none",
+    "pythonVersion": "3.11",
+    "typeCheckingMode": "basic",
     "extraPaths": [
         "src",
-        "tests",
-        "scripts",
-        "utils"
+        "utils",
+        "typings"
     ],
-    // Pylance/pyright-specific settings
-    "venvPath": "./",
     "venv": "venv",
     "useLibraryCodeForTypes": true,
-    "stubPath": "./typings"
+    "stubPath": "./typings",
+    "reportUnusedImport": "warning",
+    "reportMissingTypeStubs": "warning",
+    "reportMissingImports": "warning",
+    "reportGeneralTypeIssues": "warning",
+    "reportUndefinedVariable": "error",
+    "reportInvalidTypeVarUse": "error"
 }
