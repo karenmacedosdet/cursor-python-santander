@@ -1,3 +1,12 @@
 pandas
 matplotlib
+pandas-stubs
+```
+
+Se você usar apenas pandas e matplotlib no código, isso é suficiente.  
+Se adicionar outras bibliotecas no futuro (por exemplo, numpy, scipy, seaborn), inclua-as também.
+
+**Resumo:**  
+Adicione `pandas-stubs` para suporte a tipagem.  
+Se usar apenas pandas e matplotlib, não precisa de mais nada por enquanto.
 

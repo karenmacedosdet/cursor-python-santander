@@ -1,0 +1,94 @@
+# Arquivos de Sistema Operacional
+.DS_Store # macOS
+Thumbs.db # Windows
+desktop.ini # Windows
+
+# Ambientes Virtuais (CRÍTICO!)
+# Pasta padrão de ambientes virtuais (venv, env, .venv)
+venv/
+env/
+.venv/
+# Outras pastas de ambiente que podem ser usadas
+*/bin/activate
+*/Scripts/activate
+*/pyvenv.cfg
+*/.Python # macOS
+
+# Arquivos de Bytecode Python
+*.pyc
+__pycache__/
+.pytest_cache/ # Cache de testes Pytest
+*.pyd  # Módulos Python dinâmicos (Windows)
+*.so   # Módulos Python compartilhados (Linux/macOS)
+
+# Logs e Dados Temporários
+*.log
+*.temp
+*.tmp
+*.bak
+*.swp # Arquivos de swap do Vim
+.ipynb_checkpoints/ # Checkpoints de Jupyter Notebook
+
+# Arquivos de Pacotes e Distribuição
+.Python/
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Arquivos de IDEs e Editores
+.vscode/ # Configurações de workspace do VS Code (opcional, pode ser comitado se for config de projeto)
+.idea/   # JetBrains (PyCharm, IntelliJ)
+*.sublime-project
+*.sublime-workspace
+.project
+.settings
+.vs/ # Visual Studio
+
+# Dependências (se gerenciadas por ferramentas como Poetry/Pipenv)
+# Se você usa Poetry ou Pipenv, as pastas de dependências virtuais ficam fora do projeto geralmente
+# ou são gerenciadas por essas ferramentas. O importante é não commitar as pastas venv/env.
+
+# Arquivos de Dados (Pandas/Análise de Dados)
+# CRÍTICO: Não commitar dados brutos ou grandes arquivos de saída
+*.csv # Se forem arquivos de saída gerados ou dados brutos muito grandes
+*.xlsx # Se forem arquivos de saída ou dados brutos
+*.json # Se forem arquivos de dados gerados
+*.db # Arquivos de banco de dados (SQLite, etc.)
+data/raw/ # Pasta comum para dados brutos que não devem ser versionados
+output/ # Pasta comum para resultados/saídas geradas que não devem ser versionados
+
+# Plotagens e Imagens (Matplotlib)
+*.png # Se forem imagens de gráficos geradas pelo script
+*.jpg # Se forem imagens de gráficos geradas pelo script
+*.jpeg
+*.svg # Se forem gráficos SVG gerados pelo script
+plots/ # Pasta comum para gráficos gerados
+images/generated/ # Se houver uma pasta específica para imagens geradas
+
+# Arquivos de Configuração Sensíveis (NÃO COMMITAR!)
+.env        # Variáveis de ambiente
+*.env       # Qualquer arquivo .env
+config.ini  # Se contiver senhas ou chaves
+credentials.json # Credenciais de API, etc.
+secrets.py  # Arquivos Python com segredos
+*.key       # Chaves de segurança
+*.pem       # Certificados
+
+# Arquivos de Notebooks Jupyter (Se você usa notebooks)
+# Se você commita notebooks, talvez queira ignorar apenas os outputs (saídas).
+# Se você nunca commita notebooks, ignore *.ipynb
+# *.ipynb      # Ignora todos os notebooks Jupyter
+
+# Para ignorar APENAS os outputs de notebooks, mas commitar o código:
+# Coloque esta linha no final do .gitignore e remova o *.ipynb acima.
+*.ipynb_checkpoints/
+#.ipynb_checkpoints/
+#*.ipynb_checkpoints # if notebooks are in same folder
+*.jupyter/
+
+# Arquivos de upload de usuário (se seu projeto lida com isso)
+uploads/
+
+# Arquivos de teste (se você tiver dados de teste grandes ou outputs)
+tests/output/
