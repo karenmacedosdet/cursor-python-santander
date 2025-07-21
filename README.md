@@ -48,3 +48,12 @@ Desenvolver um pequeno aplicativo da Web para gerenciar a lista de tarefas. Os u
 - Pressione [Completar], você deve riscar a opção "Comprar leite"
 - Adicione várias tarefas, verifique se as tarefas não concluídas não estão riscadas na parte superior, etc
 - Se algo der errado (erro 500 no Flask), verifique o console onde o aplicativo está sendo executado para ver o rastreamento e corrigí-lo
+
+
+**PROJETO 5: Relatório de vendas mensais**  
+Com o objetivo de aprender tarefas comuns de análise de dados, analisar arquivo CSV com dados de vendas de uma loja, com colunas como "data", "produto", "quantidade vendida" e "preço" para obter:  
+- Total de vendas por mês
+- Produto mais vendido (em quantidade) e produto com a maior receita
+- Visualizações: gráfico de vendas por mês, gráfico de vendas por produto (5 principais)
+- Gerar um relatório de texto/HTML com esses resultados
+- Usar o pandas para a manipulação de dados e o matplotlib para a criação de gráficos
