@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Lista de Tarefas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2em;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        .feito {
+            color: #888;
+            text-decoration: line-through;
+        }
+
+        form {
+            margin-top: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Lista de Tarefas</h1>
+    <ul>
+        {% for tarefa in tarefas %}
+        <li>
+            {% if tarefa['feito'] %}
+            <span class="feito">{{ tarefa['texto'] }}</span>
+            {% else %}
+            {{ tarefa['texto'] }} <a href="/completar/{{ tarefa['id'] }}">[Completar]</a>
+            {% endif %}
+        </li>
+        {% else %}
+        <li>Nenhuma tarefa cadastrada.</li>
+        {% endfor %}
+    </ul>
+    <form action="{{ url_for('adicionar') }}" method="post">
+        <input type="text" name="texto_tarefa" placeholder="Nova tarefa" required>
+        <input type="submit" value="Adicionar">
+    </form>
+</body>
+
+</html>
