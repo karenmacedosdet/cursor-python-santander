@@ -50,7 +50,7 @@ Desenvolver um pequeno aplicativo da Web para gerenciar a lista de tarefas. Os u
 - Se algo der errado (erro 500 no Flask), verifique o console onde o aplicativo está sendo executado para ver o rastreamento e corrigí-lo
 
 
-**PROJETO 5: Relatório de vendas mensais**  
+**PROJETO 6: Relatório de vendas mensais**  
 Com o objetivo de aprender tarefas comuns de análise de dados, analisar arquivo CSV com dados de vendas de uma loja, com colunas como "data", "produto", "quantidade vendida" e "preço" para obter:  
 - Total de vendas por mês
 - Produto mais vendido (em quantidade) e produto com a maior receita
