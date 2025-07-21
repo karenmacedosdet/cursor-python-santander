@@ -66,3 +66,13 @@ Criar um script para organizar os arquivos em uma pasta, distribuindo-os em subp
 - Para cada arquivo, determine sua extensão e, portanto, sua categoria
 - Crie a pasta de categoria se ela não existir
 - Mova o arquivo para essa pasta
+
+
+**PROJETO 8: Aplicativo de desktop com interface gráfica (Tkinter)**  
+Criar um aplicativo de bloco de notas pequeno e simplificado: uma janela com uma área de texto de várias linhas que permite fazer anotações, com opções para abrir um arquivo de texto existente, copiar, recortar, colar e salvar a escrita em um arquivo.
+
+**TESTE COMPLETO DO APLICATIVO:**
+- Execute python notas.py e verifique se uma janela vazia é apresentada
+- Verifique se o menu "Arquivo" existe com as opções Abrir e Salvar
+- Verifique se o menu "Editar" existe com as opções Recortar, Copiar e Colar
+- Teste todas as funcionalidades indicadas acima
