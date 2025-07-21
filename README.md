@@ -36,3 +36,15 @@ Cursor com Python: desenvolvimento inteligente com IA
 - Veja como a IA pode até mesmo escrever código Matplotlib para você.
 - Execute o script; se estiver no Cursor, o gráfico deverá ser aberto em uma janela externa (ou no painel de plotagem do VS Code, se ativado).
 - Este exercício mistura programação com um toque de ciência de dados, demonstrando a versatilidade do Cursor.
+
+
+**PROJETO 5: Gerenciador de Tarefas Pessoal**  
+Desenvolver um pequeno aplicativo da Web para gerenciar a lista de tarefas. Os usuários poderão adicionar tarefas, marcá-las como concluídas e ver a lista atual. Usaremos o Flask, uma microestrutura da Web Python muito popular e fácil de aprender. Este projeto abrangerá conceitos de desenvolvimento da Web, como rotas, modelos HTML, formulários e implementação local.
+
+**TESTE COMPLETO DO APLICATIVO:**
+- Acesse http://127.0.0.1:5000:
+- Você deverá ver o "Gestor de tarefas" e uma lista (vazia no início) e o formulário
+- Adicione uma tarefa "Comprar leite" e pressione add (adicionar). Ele deve retornar para / e exibir "Comprar leite [Completar]"
+- Pressione [Completar], você deve riscar a opção "Comprar leite"
+- Adicione várias tarefas, verifique se as tarefas não concluídas não estão riscadas na parte superior, etc
+- Se algo der errado (erro 500 no Flask), verifique o console onde o aplicativo está sendo executado para ver o rastreamento e corrigí-lo
