@@ -18,6 +18,8 @@
     ],
     "pythonVersion": "3.11",
     "typeCheckingMode": "basic",
+    "reportShadowedImports": false,
+    "reportGeneralTypeIssues": "warning",
     "extraPaths": [
         "src",
         "utils",
@@ -29,7 +31,6 @@
     "reportUnusedImport": "warning",
     "reportMissingTypeStubs": "warning",
     "reportMissingImports": "warning",
-    "reportGeneralTypeIssues": "warning",
     "reportUndefinedVariable": "error",
     "reportInvalidTypeVarUse": "error"
 }
