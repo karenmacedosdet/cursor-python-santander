@@ -13,11 +13,10 @@ df = pd.read_csv(
 )
 
 """2. Calcular o total de vendas por mês"""
-df["Data"] = pd.to_datetime(df["Data"])
-df["mes"] = df["Data"].dt.to_period("M")
+df["data"] = pd.to_datetime(df["data"])
+df["mes"] = df["data"].dt.to_period("M")
 df["Valor"] = df["quantidade"] * df["preco"]
-vendas_por_mes = df.groupby("mes").apply(lambda d: d["Valor"].sum())
-vendas_por_mes = vendas_por_mes.astype(float)
+vendas_por_mes = df.groupby("mes")["Valor"].sum()
 print("Vendas por mês:")
 print(vendas_por_mes)
 print()
@@ -50,7 +49,7 @@ plt.tight_layout()
 plt.show()
 
 """5. Gráfico dos 5 principais produtos por receita"""
-top5_produtos = df.groupby("Produto")["Valor"].sum().nlargest(5)
+top5_produtos = df.groupby("produto")["Valor"].sum().nlargest(5)
 print("Top 5 produtos por receita:")
 print(top5_produtos)
 print()

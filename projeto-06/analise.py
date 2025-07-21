@@ -55,8 +55,10 @@ def gerar_grafico_vendas_por_mes(vendas_por_mes_val):
     plt.close()
 
     # Converter imagem para base64
-    with open(grafico1_path, "rb") as f:
-        grafico1_b64_val = base64.b64encode(f.read()).decode("utf-8")
+    with open(grafico1_path, "rb") as file_obj:
+        grafico1_b64_val = base64.b64encode(file_obj.read()).decode(
+            "utf-8"
+        )
     return grafico1_b64_val
 
 
@@ -80,8 +82,10 @@ def gerar_grafico_top_produtos(vendas_prod_val):
     plt.close()
 
     # Converter imagem para base64
-    with open(grafico2_path, "rb") as f:
-        grafico2_b64_val = base64.b64encode(f.read()).decode("utf-8")
+    with open(grafico2_path, "rb") as file_obj:
+        grafico2_b64_val = base64.b64encode(file_obj.read()).decode(
+            "utf-8"
+        )
     return grafico2_b64_val, top5_produtos_val
 
 
@@ -99,13 +103,14 @@ def gerar_relatorio(
         f"<p>Produto mais vendido em unidades: <b>{mais_vendido_nome}</b> "
         f"(total {vendas_prod_val.loc[mais_vendido_nome, 'quantidade']})</p>"
         f"<p>Produto com maior receita: <b>{maior_receita_nome}</b> "
-        f"(total R$ {vendas_prod_val.loc[maior_receita_nome, 'receita']:.2f})</p>"
+        f"(total R$ "
+        f"{vendas_prod_val.loc[maior_receita_nome, 'receita']:.2f})</p>"
     )
     top5_html = "<ul>"
     for produto, receita in top5_produtos_val["receita"].items():
         top5_html += f"<li>{produto}: R$ {receita:.2f}</li>"
     top5_html += "</ul>"
-    report_html = f"""  
+    html_report_str = f"""
 <html>
 <head><meta charset='utf-8'><title>Relatório de Vendas</title></head>
 <body>
@@ -124,7 +129,7 @@ def gerar_relatorio(
 </body>
 </html>
 """
-    return report_html
+    return html_report_str
 
 
 # Exemplo de uso:
@@ -133,7 +138,7 @@ df, vendas_por_mes = calcular_vendas_por_mes(df)
 vendas_prod, mais_vendido, maior_receita = principais_produtos(df)
 grafico1_b64 = gerar_grafico_vendas_por_mes(vendas_por_mes)
 grafico2_b64, top5_produtos = gerar_grafico_top_produtos(vendas_prod)
-report_html = gerar_relatorio(
+html_report = gerar_relatorio(
     vendas_por_mes,
     vendas_prod,
     mais_vendido,
@@ -147,6 +152,6 @@ with open(
     os.path.join(os.path.dirname(__file__), "report.html"),
     "w",
     encoding="utf-8",
-) as f:
-    f.write(report_html)
+) as out_file:
+    out_file.write(html_report)
 print("Relatório gerado em report.html")
