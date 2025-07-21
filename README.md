@@ -61,7 +61,7 @@ Com o objetivo de aprender tarefas comuns de análise de dados, analisar arquivo
 
 **PROJETO 7: Automatização – “Organizador de Arquivos”**
 Criar um script para organizar os arquivos em uma pasta, distribuindo-os em subpastas de acordo com a categoria da sua extensão. Por exemplo, na pasta "Downloads", temos uma mistura de imagens, documentos PDF, vídeos etc. Queremos que o script crie subdiretórios como Imagens, Documentos, Vídeos, Outros e mova cada arquivo para o diretório correspondente de acordo com sua extensão. Esse script pode ser executado manualmente ou programado para ser executado de tempos em tempos, de acordo com as seguintes etapas:
-- Defina categorias de extensões: Imagens = [".png", ".jpg", ".jpeg", ".gif"], Documentos = [".pdf", ".docx", ".txt"] etc.), Videos = [".mp4", ".avi", ".mkv"], Musica = [".mp3", ".wav"], Outra = [outras extensões]
+- Defina categorias de extensões: Imagens = [".png", ".jpg", ".jpeg", ".gif"], Documentos = [".pdf", ".docx", ".txt"], Videos = [".mp4", ".avi", ".mkv"], Musica = [".mp3", ".wav"], Outra = [outras extensões]
 - Listar todos os arquivos na pasta de destino
 - Para cada arquivo, determine sua extensão e, portanto, sua categoria
 - Crie a pasta de categoria se ela não existir
